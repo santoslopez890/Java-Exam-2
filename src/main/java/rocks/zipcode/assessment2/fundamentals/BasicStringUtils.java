@@ -35,7 +35,23 @@ public class BasicStringUtils {
      * @return concatenation of the reverse of `string1` and reverse of `string2`
      */
     public static String reverseThenConcatenate(String string1, String string2) {
-        return null;
+        char character;
+        char character2;
+        String  reversed="";
+        String reversed2="";
+        for (int i=0; i<string1.length(); i++)
+        {
+            character= string1.charAt(i); //extracts each character
+            reversed= character+reversed; //adds each character in front of the existing string
+        }
+        for (int i=0; i<string2.length(); i++)
+        {
+            character2= string2.charAt(i); //extracts each character
+            reversed2= character2+reversed2; //adds each character in front of the existing string
+        }
+
+
+        return reversed+reversed2;
     }
 
     /**
@@ -44,7 +60,14 @@ public class BasicStringUtils {
      * @return `string` with `charactersToRemove` removed
      */
     public static String removeCharacters(String string, String charactersToRemove) {
-        return null;
+        char [] cahrarr= charactersToRemove.toCharArray();
+        for (int i = 0; i < cahrarr.length; i++) {
+
+            string = string.replaceAll(String.valueOf(cahrarr[i]), "");
+
+        }
+
+        return string;
     }
 
     /**
@@ -53,6 +76,23 @@ public class BasicStringUtils {
      * @return reverse of `string` with `charactersToRemove` removed
      */
     public static String removeCharactersThenReverse(String string, String charactersToRemove) {
-        return null;
+        char [] cahrarr= charactersToRemove.toCharArray();
+        for (int i = 0; i < cahrarr.length; i++) {
+
+            string = string.replaceAll(String.valueOf(cahrarr[i]), "");
+
+        }
+        char character;
+        String  reversed="";
+        for (int i=0; i<string.length(); i++)
+        {
+            character= string.charAt(i); //extracts each character
+            reversed= character+reversed; //adds each character in front of the existing string
+        }
+        return reversed;
+
+
+
+
     }
 }
