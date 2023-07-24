@@ -14,6 +14,7 @@ public class Animal {
     public Animal() {
         this.id=null;
         this.owner=null;
+
     }
 
     public Long getId() {
@@ -43,5 +44,13 @@ public class Animal {
 
     public Address getAddress() {
         return owner.getAddress();
+    }
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "id=" + id +
+                ", owner=" + owner +
+                '}';
     }
 }

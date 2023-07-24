@@ -1,7 +1,9 @@
 package rocks.zipcode.assessment2.fundamentals;
 
 
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
 
 /**
  * @author leon on 28/11/2018.
@@ -51,7 +53,27 @@ public class StringUtils {
      */
     public static Boolean isAlphaString(String string) {
         string = string.replaceAll(" ", (""));
-        return string.matches("[a-zA-Z0-9]*");
+
+        // Regex to check string is alphanumeric or not.
+        String regex = "^(?=.*[a-zA-Z])(?=.*[0-9])[A-Za-z0-9]+$";
+
+        // Compile the ReGex
+        Pattern p = Pattern.compile(regex);
+
+        // If the string is empty
+        // return false
+        if (string == null) {
+            return false;
+        }
+
+        // Pattern class contains matcher() method
+        // to find matching between given string
+        // and regular expression.
+        Matcher m = p.matcher(string);
+
+        // Return if the string
+        // matched the ReGex
+        return m.matches();
 
     }
 
