@@ -34,6 +34,17 @@ return newArray;
      * @return an array all elements between after `startingIndex`
      */
     public static String[] getEndingArray(String[] arrayToBeSpliced, int startingIndex) {
-        return null;
+        if(startingIndex>arrayToBeSpliced.length){
+            throw new IllegalArgumentException();
+        }
+
+        String[] newArray= new String[arrayToBeSpliced.length-startingIndex];
+
+
+        for (int i = 0; i < newArray.length; i++) {
+            newArray[i] = arrayToBeSpliced[startingIndex + i];
+
+        }
+        return newArray;
     }
 }
