@@ -1,5 +1,7 @@
 package rocks.zipcode.assessment2.fundamentals;
 
+import java.util.ArrayList;
+
 public class BasicStringUtils {
     /**
      * @param string1 - Base string to be added to
@@ -7,7 +9,7 @@ public class BasicStringUtils {
      * @return concatenation of `string1` and `string2`
      */
     public static String concatentate(String string1, String string2) {
-        return null;
+        return string1+string2;
     }
 
     /**
@@ -15,7 +17,16 @@ public class BasicStringUtils {
      * @return an identical string with characters in reverse order
      */
     public static String reverse(String string1) {
-        return null;
+        char character;
+        String  reversed="";
+        for (int i=0; i<string1.length(); i++)
+        {
+            character= string1.charAt(i); //extracts each character
+            reversed= character+reversed; //adds each character in front of the existing string
+        }
+        return reversed;
+
+
     }
 
     /**
