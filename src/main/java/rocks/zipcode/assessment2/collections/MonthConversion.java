@@ -11,9 +11,6 @@ import java.util.Objects;
 public class MonthConversion {
     private HashMap<Integer,String> hashMap=new HashMap<>();
 
-
-
-
     /**
      * @param monthNumber - ordinal of month in the year; i.e. January = 1, February = 2
      * @param monthName - name of month
@@ -36,13 +33,13 @@ public class MonthConversion {
      * @param monthName - name of month
      * @return - the ordinal of the month in the year
      */
-    public int getNumber(String monthName) {
+    public java.lang.Integer getNumber(String monthName) {
         for (Map.Entry<Integer, String> entry : hashMap.entrySet()) {
             if (Objects.equals(monthName, entry.getValue())) {
                 return entry.getKey();
             }
         }
-        return 0;
+        return null;
     }
 
     /**
